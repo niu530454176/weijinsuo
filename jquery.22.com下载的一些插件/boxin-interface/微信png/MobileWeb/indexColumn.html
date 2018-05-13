@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<html lang=zh-cmn-Hans>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0"/>
+    <meta name="apple-mobile-web-app-capable" content="yes"/>
+    <meta name="apple-mobile-web-app-status-bar-style" content="black"/>
+    <meta name="format-detection" content="telephone=no"/>
+    <title>弘学教育</title>
+    <meta name="keywords" content="A股头条"/>
+    <meta name="description" content="A股头条"/>
+    <script src="js/jquery.js"></script>
+    <script src="js/swiper.min.js"></script>
+    <script src="js/main.js"></script>
+    <link rel="stylesheet" href="css/style.css" type="text/css"/>
+    <link rel="stylesheet" href="css/list.css" type="text/css"/>
+    <link href="css/main.css" rel="stylesheet" type="text/css"/>
+    <link href="css/header.css" rel="stylesheet" type="text/css"/>
+    <link rel="stylesheet" href="css/indexColumn.css">
+    <link rel="stylesheet" href="css/common.css">
+    <style>
+        .tag-list {
+            margin: 100px 0;
+        }
+
+        .tag-list .head {
+            display: block;
+            color: #289CE7;
+            clear: both;
+            padding: 10px;
+            text-align: center;
+        }
+
+        .tag-list .head strong {
+            border-bottom: 2px solid #289CE7;
+            display: inline-block;
+            padding: 0px 10px;
+            font-size: 16px;
+            font-weight: normal;
+        }
+
+        .tag-list .tag-section {
+            display: block;
+            clear: both;
+            overflow: hidden;
+            border-top: 1px solid #ded3b9;
+            border-left: 1px solid #ded3b9;
+        }
+
+        .tag-list .tag-section .tag-item {
+            display: block;
+            float: left;
+            width: 50%;
+        }
+
+        .tag-list .tag-section .tag-item span {
+            display: block;
+            color: #353535;
+            text-align: center;
+            padding: 10px;
+            border: 1px solid #ded3b9;
+            margin-left: -1px;
+            margin-top: -1px;
+            text-transform: uppercase;
+            text-overflow: ellipsis;
+            overflow: hidden;
+            white-space: nowrap;
+        }
+        .x5_nav .nav_video:before {
+            background: url(images/nav_video-hover.png);
+        }
+        .a-active {
+            background: #e8e8e8;
+            border-radius: 10px;
+        }
+
+        .banner .slider #pagenavi {
+            bottom: .1rem;
+        }
+
+        .banner .slider #pagenavi a {
+            width: 5.5%;
+            height: .04rem;
+        }
+        @media (min-width: 800px){
+            .column .column-wrap .head-line .column-head {
+                height: 60px;
+                font-size: 24px;
+                line-height: 60px;
+            }
+            .column .column-wrap .head-line .column-head .more-btn img {
+                width: 50px;
+                height: 60px;
+                margin-top: 0;
+            }
+            .column .column-wrap .column-list li .item-image {
+                width: 280px;
+                height: 185px;
+            }
+            .column .column-wrap .column-list li .item-name {
+                color: #333333;
+                font-size: 20px;
+                margin: 0;
+                margin-top: 10px;
+            }
+            .column .column-wrap .column-list li .item-desc {
+                margin-bottom: 10px;
+            }
+            .x5_headt {
+                 height: 270px;
+             }
+            .banner .slider .sliderlist li img {
+                height: 270px;
+            }
+            .banner .slider {
+                height: 270px;
+            }
+            .banner .slider #pagenavi a {
+                height: 3px;
+                margin: 0 20px;
+            }
+            .column .column-wrap .head-line .column-head .head-left-w .head-left .border {
+                width: 8px;
+                height: 40px;
+                margin-right: 24px;
+            }
+        }
+    </style>
+</head>
+<body>
+<div class="x5_nav">
+    <a href="indexInfo.html" class="nav_index">资讯中心</a>
+    <a href="indexVideo.html" class="nav_video" style="color: #ff0000;">视频中心</a>
+    <a href="indexVideo_openclass.html" class="nav_open">公开课</a>
+    <!-- <a href="news.php" class="nav_so">产品简介</a>
+   -->
+</div>
+<div class="x5_wap">
+    <header class="x5_headt">
+
+        <!--<img src="images/djctop.jpg" class="head-avatart" />
+
+    轮播图片-->
+        <script type="text/javascript" src="js/touchslider.js"></script>
+        <div align="center">
+            <div class="banner">
+                <div id="slider" class="slider">
+
+                    <ul id="sliderlist" class="sliderlist">
+                        <li><img src="images/c5.png"></li>
+                        <li><img src="images/c7.png"></li>
+                        <li><img src="images/c6.png"></li>
+                        <li><img src="images/c6.jpg"></li>
+                    </ul>
+                    <div id="pagenavi">
+                        <a class="active" href="#"></a>
+                        <a href="#"></a>
+                        <a href="#"></a>
+                        <a href="#"></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <script type="text/javascript" src="js/banner.js"></script>
+        <!--轮播图片-end-->
+    </header>
+    <div class="swiper-container goods-det-banner">
+        <div class="swiper-wrapper swipe-wrap">
+            <div class="swiper-slide wrap">
+                <ul class="qmenu">
+                    <li>
+                        <a href="indexVideo.html" onclick="window.location.href='indexVideo.html'">
+                            <i class="cor01" style="width: 60px; height: 60px; padding: 10px;"><img width="100%" src="./images/qmenu-ico07.png" alt=""></i>
+                            <p>公开课</p>
+                        </a>
+                    </li>
+
+                    <li type="20001" id="20001">
+                        <a class="a-active">
+                            <i class="cor01" style="width: 60px; height: 60px; padding: 10px;"><img width="100%" src="./images/qmenu-ico08.png" alt=""></i>
+                            <p>擒妖捉马</p>
+                        </a>
+                    </li>
+
+
+                    <li type="20002" id="20002">
+                        <a> <!-- showDetail('jrfxb','20283') -->
+                            <i class="cor01" style="width: 60px; height: 60px; padding: 10px;"><img width="100%" src="./images/qmenu-ico09.png" alt=""></i>
+
+                            <p>涨停为王</p>
+                        </a>
+                    </li>
+
+                    <li type="10003" id="10003">
+                        <a >
+                            <i class="cor01" style="width: 60px; height: 60px; padding: 10px;"><img width="100%" src="./images/qmenu-ico010.png" alt=""></i>
+
+                            <p>弘学情报站</p>
+                        </a>
+                    </li>
+                    <li  type="10004" id="10004">
+                        <a >
+                            <i class="cor01" style="width: 60px; height: 60px; padding: 10px;"><img width="100%" src="./images/qmenu-ico011.png" alt=""></i>
+
+                            <p>黄金十二点</p>
+                        </a>
+                    </li>
+                    <li  type="10005" id="10005">
+                        <a >
+                            <i class="cor01" style="width: 60px; height: 60px; padding: 10px;"><img width="100%" src="./images/qmenu-ico012.png" alt=""></i>
+                            <p>大咖评论室</p>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+
+        </div>
+    </div>
+    <script>
+        var swiper = new Swiper('.swiper-container', {
+            // pagination: '.swiper-pagination',
+            paginationClickable: true,
+            autoplay: false
+        });
+    </script>
+
+
+    <div class="column">
+
+    </div>
+
+</div>
+
+<img src="images/wapstat.php" width="0" height="0"/>
+<script src="lib/zepto.min.js"></script>
+<script src="lib/initFont.js"></script>
+<script src="lib/require.js" data-main="js/indexColumn"></script>
+<script src="lib/common.js"></script>
+<script>
+    var _hmt = _hmt || [];
+    (function() {
+        var hm = document.createElement("script");
+        hm.src = "https://hm.baidu.com/hm.js?cec4bc1d94c919e79ea77ea62778bf41";
+        var s = document.getElementsByTagName("script")[0];
+        s.parentNode.insertBefore(hm, s);
+    })();
+    var $x5_nav = $('.x5_nav');
+    var width = $x5_nav.width() / 2;
+    $x5_nav.css('margin-left', -width);
+</script>
+</body>
+</html>

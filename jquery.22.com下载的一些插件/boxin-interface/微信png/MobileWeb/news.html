@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang=zh-cmn-Hans>
+<head>
+    <meta charset="UTF-8">
+    <meta content="width=device-width,initial-scale=1.0,maximum-scale=1.0,user-scalable=no" id="viewport" name="viewport">    <meta name="format-detection" content="telephone=no">
+    <meta name="format-detection" content="address=no">
+    <title>弘学教育</title>
+    <link href="css/monitor.css" rel="stylesheet">
+    <link rel="stylesheet" href="css/common.css">
+    <script src="js/jquery-1.8.3.min.js"></script>
+    <script src="js/faskclick.js"></script>
+    <script type="text/javascript">
+        $(function () {
+            $(".swifont").bind("click", function () {
+                if ($(this).attr("class").indexOf("active") > 0) {
+                    $(this).removeClass("active");
+                    $(".ardet .text").removeClass("big");
+                }
+                else {
+                    $(this).addClass("active");
+                    $(".ardet .text").addClass("big");
+                }
+            });
+        });
+    </script>
+    <script language="Javascript">
+        document.oncontextmenu = new Function("event.returnValue=false");
+        document.onselectstart = new Function("event.returnValue=false");
+    </script>
+    <style>
+        .greena {
+            color: green;
+            font-weight: 600;
+        }
+
+        .reda {
+            color: red;
+            font-weight: 600;
+        }
+
+        .common {
+            color: #B92600;
+            font-weight: 600;
+        }
+
+        .x5_nav .nav_open:before {
+            background: url(./images/nav_open.png);
+        }
+
+        .head {
+            height: 3.2rem;
+            line-height: 3.2rem;
+            background-color: #fa424e;
+            color: white;
+            text-align: center;
+            font-size: 20px;
+            position: relative;
+            font-weight: normal;
+        }
+        .head .back {
+            position: absolute;
+            left: 0.1rem;
+            font-size: 20px;
+            font-weight: normal;
+        }
+        .back-top {
+            width: 50px;
+            height: 50px;
+            position: fixed;
+            bottom: 70px;
+            right: 30px;
+            display: none;
+            border-radius: 50%;
+            background: rgba(4,4,4,0.55) url("images/back-top.png") center center no-repeat;
+        }
+        .statement {
+            margin-top: 1rem;
+            font-size: 16px;
+            padding: 10px;
+            padding-bottom: 40px;
+            color: #666;
+        }
+        hr {
+            border: 0.01rem #8e8e8e dashed;
+            margin-top: 0.5rem;
+        }
+
+        .x5_nav .nav_index:before {
+            background: url(images/home-hover.png);
+        }
+    </style>
+</head>
+
+<body style="max-width: 640px; margin: 0 auto;">
+<h1 class="head"><span class="back" onclick="window.location.href='indexInfo.html'">&lt;&lt;返回</span>资讯中心</h1>
+<div class="x5_nav" style="max-width: 800px;left: 50%;">
+    <a href="indexInfo.html" class="nav_index on">资讯中心</a>
+    <a href="indexVideo.html" class="nav_video">视频中心</a>
+    <a href="indexVideo_openclass.html" class="nav_open ">公开课</a>
+</div>
+<div class="x3_wap">
+    <div class="center ardet">
+        <div class="tit">
+            <h1></h1>
+            <p class="createtime"></p>
+            <div class="swifont">
+                <i></i>
+                <p>小</p>
+                <p class="b">大</p>
+            </div>
+        </div>
+        <div class="text">
+
+        </div>
+    </div>
+
+    <div class="imgcon">
+        <p>
+            <!--<img src="images/ercode.jpg">-->
+        </p>
+    </div>
+    <img src="images/wapstat.php" width="0" height="0"/>
+    <hr>
+    <div class="statement">
+        <p>免责声明：本产品内发布的信息，目的在于传播更多信息，与本终端立场无关。本产品不保证该信息（包括但不限于文字、数据及图表）全部或者部分内容的准确性、真实性、完整性、有效性、及时性、原创性等。相关信息并未经过本终端证实，不对您构成任何投资建议，据此操作，风险自担部分功能属于高端版本才可以使用！</p>
+    </div>
+</div>
+<div class="back-top"></div>
+<script type="text/javascript" src="js/ext.js"></script>
+<script type="text/javascript" src="js/manage.js"></script>
+<script src="lib/common.js"></script>
+<script src="js/news.js"></script>
+<script>
+    var _hmt = _hmt || [];
+    (function() {
+        var hm = document.createElement("script");
+        hm.src = "https://hm.baidu.com/hm.js?cec4bc1d94c919e79ea77ea62778bf41";
+        var s = document.getElementsByTagName("script")[0];
+        s.parentNode.insertBefore(hm, s);
+    })();
+    var $x5_nav = $('.x5_nav');
+    var width = $x5_nav.width() / 2;
+    $x5_nav.css('margin-left', -width);
+</script>
+</body>
+</html>

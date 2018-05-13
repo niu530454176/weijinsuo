@@ -1,0 +1,55 @@
+h1 {
+  width: 7.5rem;
+  height: 0.88rem;
+  background: #fa424e;
+  color: white;
+  font-size: 0.36rem;
+  line-height: 0.88rem;
+  text-align: center;
+  position: fixed;
+  top: 0;
+  z-index: 1;
+}
+h1 .back {
+  position: absolute;
+  left: 0;
+  font-size: 0.23rem;
+  padding: 0 1rem 0 0.24rem;
+}
+h1 .back a {
+  color: white;
+  text-decoration: underline;
+}
+.column-list-wrap {
+  margin-top: 1.11rem;
+}
+.column-list-wrap .column-list {
+  color: #000;
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row;
+  justify-content: space-around;
+  padding-left: .19rem;
+  margin-bottom: 60px;
+}
+.column-list-wrap .column-list li {
+  flex: 1;
+}
+.column-list-wrap .column-list li .item-image {
+  width: 3.52rem;
+  height: 2.24rem;
+  background: white;
+}
+.column-list-wrap .column-list li .item-image img {
+  width: 100%;
+  height: 100%;
+}
+.column-list-wrap .column-list li .item-name {
+  font-size: .28rem;
+  margin: .2rem 0;
+}
+.column-list-wrap .column-list li .item-desc {
+  color: #e6e6e6;
+  font-size: .28rem;
+  margin-bottom: .4rem;
+}

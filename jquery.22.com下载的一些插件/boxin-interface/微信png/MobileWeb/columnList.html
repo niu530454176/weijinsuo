@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang=zh-cmn-Hans>
+<head>
+    <meta charset="UTF-8">
+    <title>弘学教育</title>
+    <meta id="viewport" name="viewport"
+          content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=yes">
+    <link rel="stylesheet" href="css/style.css" type="text/css"/>
+    <link rel="stylesheet" href="css/common-mobile.css">
+    <link rel="stylesheet" href="css/columnList.css">
+    <link rel="stylesheet" href="css/common.css">
+    <style>
+        .x5_nav .nav_video:before {
+            background: url(images/nav_video-hover.png);
+        }
+        @media (min-width: 800px){
+            body {
+                position: absolute;
+                top: 0;
+                left: 50%;
+            }
+            .wrap {
+                max-width: 640px;
+                margin: 0 auto;
+                position: absolute;
+                left: 50%;
+            }
+            h1 {
+                width: 640px;
+                margin: 0 auto;
+                height: 60px;
+                font-size: 24px;
+                line-height: 60px;
+                top: 0;
+            }
+            h1 .back {
+                font-size: 24px;
+            }
+            .column-list-wrap .column-list {
+                padding-left: 10px;
+            }
+            .column-list-wrap .column-list li .item-image {
+                width: 290px;
+                height: 185px;
+            }
+            .column-list-wrap {
+                margin-top: 100px;
+            }
+            .column-list-wrap .column-list li .item-name {
+                font-size: 22px;
+                margin: 20px 0;
+                text-align: left;
+            }
+        }
+    </style>
+</head>
+<body>
+<h1><span class="back" onclick="history.go(-1)">&lt;&lt;返回</span><span class="column-name">视频中心</span></h1>
+<div class="x5_nav">
+    <a href="indexInfo.html" class="nav_index">资讯中心</a>
+    <a href="indexVideo.html" class="nav_video" style="color: #ff0000;">视频中心</a>
+    <a href="indexVideo_openclass.html" class="nav_open">公开课</a>
+    <!-- <a href="news.php" class="nav_so">产品简介</a>
+   -->
+</div>
+<div class="column-list-wrap">
+    <ul class="column-list">
+
+    </ul>
+</div>
+<script src="lib/common.js"></script>
+<script src="lib/zepto.min.js"></script>
+<script src="lib/initFont.js"></script>
+<script src="lib/require.js" data-main="js/columnList"></script>
+<script>
+    var _hmt = _hmt || [];
+    (function() {
+        var hm = document.createElement("script");
+        hm.src = "https://hm.baidu.com/hm.js?cec4bc1d94c919e79ea77ea62778bf41";
+        var s = document.getElementsByTagName("script")[0];
+        s.parentNode.insertBefore(hm, s);
+    })();
+    var $x5_nav = $('.x5_nav');
+    var width = $x5_nav.width() / 2;
+    $x5_nav.css('margin-left', -width);
+    if (IsPC()) {
+        var $body = $('body');
+        $body.css('margin-left', -width);
+    }
+</script>
+</body>
+</html>

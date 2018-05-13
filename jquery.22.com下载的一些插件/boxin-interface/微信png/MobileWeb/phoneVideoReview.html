@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="lang=zh-cmn-Hans">
+<head>
+    <meta charset="UTF-8">
+    <title>弘学教育</title>
+    <meta id="viewport" name="viewport"
+          content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=yes">
+    <meta name="format-detection" content="telephone=no">
+    <!-- 启用360浏览器的极速模式(webkit) -->
+    <meta name="renderer" content="webkit">
+    <!-- 避免IE使用兼容模式 -->
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <!-- 针对手持设备优化，主要是针对一些老的不识别viewport的浏览器，比如黑莓 -->
+    <meta name="HandheldFriendly" content="true">
+    <!-- 微软的老式浏览器 -->
+    <meta name="MobileOptimized" content="320">
+    <!-- uc强制竖屏 -->
+    <meta name="screen-orientation" content="portrait">
+    <!-- QQ强制竖屏 -->
+    <meta name="x5-orientation" content="portrait">
+    <!-- UC强制全屏 -->
+    <!--<meta name="full-screen" content="yes">-->
+    <!-- QQ强制全屏 -->
+    <meta name="x5-fullscreen" content="true">
+    <!-- windows phone 点击无高光 -->
+    <meta name="msapplication-tap-highlight" content="no">
+    <meta http-equiv="Pragma" content="no-cache">
+    <meta http-equiv="Cache-Control" content="no-cache">
+    <meta http-equiv="Expires" content="0">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/common-mobile.css">
+    <link rel="stylesheet" href="css/phoneVideoReview.css">
+    <link rel="stylesheet" href="css/common.css">
+    <script src="lib/zepto.min.js"></script>
+    <script src="lib/common.js"></script>
+    <script src="js/timeTool.js"></script>
+    <style>
+        .x5_nav .nav_open:before {
+            background: url(images/nav-open-hover.png);
+        }
+
+        @media (min-width: 800px) {
+            body {
+                margin: 0 auto;
+            }
+
+            .head {
+                width: 640px;
+                height: 60px;
+                font-size: 24px;
+                line-height: 60px;
+            }
+
+            .head .back {
+                font-size: 24px;
+            }
+
+            .wrap {
+                font-size: 24px;
+                padding: 0;
+            }
+
+            .wrap .course {
+                color: #666666;
+                padding-bottom: 10px;
+                margin-bottom: 10px;
+            }
+
+            .wrap .course .video {
+                height: 300px;
+                border: 0.01rem solid #212121;
+                background: #212121;
+            }
+
+            .wrap .related .title1 {
+                max-width: 640px;
+                margin: 50px auto;
+                font-size: 26px;
+            }
+
+            .wrap .related .course-v .course-des {
+                width: 300px;
+                height: 200px;
+            }
+
+            .wrap .related .course-v .course-des .v-title {
+                font-size: 24px;
+            }
+
+            .wrap .related .course-v .course-des {
+                margin-right: 40px;
+            }
+
+            .wrap .related .course-v {
+                margin-right: -40px;
+            }
+        }
+    </style>
+<body>
+<div class="x5_nav">
+    <a href="indexInfo.html" class="nav_index">资讯中心</a>
+    <a href="indexVideo.html" class="nav_video">视频中心</a>
+    <a href="indexVideo_openclass.html" class="nav_open" style="color: #ff0000;">公开课</a>
+    <!-- <a href="news.php" class="nav_so">产品简介</a>
+   -->
+</div>
+<h1 class="head"><span class="back" onclick="history.go(-1)">&lt;&lt;返回</span>公开课</h1>
+<div class="wrap">
+    <div class="course">
+    </div>
+    <div class="related">
+        <div class="title1">
+            <div class="line1"></div>
+            <div class="text">相关视频</div>
+            <div class="line2"></div>
+        </div>
+        <div class="course-v cf">
+        </div>
+    </div>
+</div>
+<script src="lib/TcPlayer.js"></script>
+<script src="js/phoneVideoReview.js"></script>
+<script>
+    var _hmt = _hmt || [];
+    (function () {
+        var hm = document.createElement("script");
+        hm.src = "https://hm.baidu.com/hm.js?cec4bc1d94c919e79ea77ea62778bf41";
+        var s = document.getElementsByTagName("script")[0];
+        s.parentNode.insertBefore(hm, s);
+    })();
+    var $x5_nav = $('.x5_nav');
+    var $x5_navWidth = $x5_nav.width() / 2;
+    $x5_nav.css('margin-left', -$x5_navWidth);
+</script>
+</body>
+</html>

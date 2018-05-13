@@ -1,0 +1,349 @@
+<!DOCTYPE html>
+<html lang=zh-cmn-Hans>
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0;"/>
+    <meta name="apple-mobile-web-app-capable" content="yes"/>
+    <meta name="apple-mobile-web-app-status-bar-style" content="black"/>
+    <meta name="format-detection" content="telephone=no"/>
+    <title>弘学教育</title>
+    <meta name="keywords" content="A股头条"/>
+    <meta name="description" content="A股头条"/>
+    <link rel="stylesheet" href="css/style.css" type="text/css"/>
+    <link rel="stylesheet" href="css/index.css" type="text/css"/>
+    <link rel="stylesheet" href="css/list.css" type="text/css"/>
+    <link href="css/main.css" rel="stylesheet" type="text/css"/>
+    <link href="css/header.css" rel="stylesheet" type="text/css"/>
+    <script src="js/faskclick.js"></script>
+    <link rel="stylesheet" href="css/video.css">
+    <link rel="stylesheet" href="css/common.css">
+    <link rel="stylesheet" href="css/manage.css">
+    <link href="css/date.css" rel="stylesheet" type="text/css"/>
+    <style>
+        .demo {
+            width: 300px;
+            margin: 40px auto 0 auto;
+            position: absolute;
+            top: 7.8rem;
+            left: 8.5rem;
+        }
+
+        .tips {
+            text-align: center;
+            width: 20rem;
+            font-size: 1.3rem;
+        }
+
+        @media (min-width: 800px) {
+
+            .x3_wap .information .tips {
+                font-size: 1.5rem;
+                width: 100%;
+                text-align: center;
+                text-indent: 2em;
+            }
+
+            .x3_wap .information {
+                padding: 1.5rem;
+                padding-bottom: 2rem;
+                margin-top: 11.7rem;
+                height: 12.5rem;
+            }
+            .x3_wap .form-container .search-btn {
+                top: 15rem;
+            }
+            .x3_wap .title {
+                display: none;
+            }
+
+            .x3_wap .information li {
+                list-style-type: none;
+                height: 3.5rem;
+                font-size: 1rem;
+                margin-right: -5rem;
+                margin-left: -1.3rem;
+            }
+
+            .x3_wap .information li .section {
+                float: left;
+                height: 3.4rem;
+                width: 7.4rem;
+                text-align: center;
+                line-height: 3.4rem;
+                font-size: 1.2rem;
+                border: 1px solid #999;
+            }
+            .x3_wap .information li .control {
+                width: 14.9rem;
+                color: #666;
+                cursor: none;
+            }
+            .x3_wap .information li .btn:hover {
+                text-decoration: underline;
+            }
+
+            body {
+                position: absolute;
+                left: 50%;
+                margin-left: -400px;
+                width: 800px;
+            }
+
+            .x3_wap .form-container .mod_select ul .select_label_bottom {
+                margin-top: 0;
+            }
+
+            .demo {
+                width: 300px;
+                margin: 40px auto 0 auto;
+                position: absolute;
+                top: 5rem;
+                left: 25.5rem;
+            }
+        }
+        .demo {
+            width: 180px;
+        }
+        .demo input {
+            width: 10rem;
+            font-size: 1rem;
+            height: 2.3rem;
+            border: solid 1px #EDE7D6;;
+            text-indent: 2rem;
+            background-color: rgba(0, 0, 0, 0);
+            margin-bottom: -1.5rem;
+        }
+
+        .demo .lie {
+            margin: 0 0 20px 0;
+        }
+    </style>
+</head>
+<body class="white-bg">
+<div class="x3_wap">
+    <h3>视频详情查询</h3>
+    <div class="form-container">
+        <h4>课程查询</h4>
+        <div class="mod_select">
+            <ul>
+                <li>
+                    <span class="select_label">选择课程</span>
+                    <div class="select_box">
+                        <span class="select_txt select_class">涨停为王</span>
+                        <a class="selet_open">
+                            <b></b>
+                        </a>
+                        <div class="option">
+                            <a>涨停为王</a>
+                            <a>擒妖捉马</a>
+                        </div>
+                    </div>
+                    <br clear="all"/>
+                </li>
+                <li>
+                    <span class="select_label select_label_bottom">选择时间</span>
+                </li>
+            </ul>
+            <input type="hidden" id="select_value"/>
+        </div>
+        <div class="search-btn">开始查询</div>
+        <ul class="information">
+            <li class="title">
+                <div class="section ">课程</div>
+                <div class="section name password">密码</div>
+                <div class="section name time">时间</div>
+                <div class="section name btn control" >控制</div>
+            </li>
+            <div class="information-w">
+
+            </div>
+        </ul>
+    </div>
+</div>
+<div class="demo">
+    <div class="lie"><input id="beginTime" class="kbtn" value=""/></div>
+    <div class="lie"><input id="endTime" class="kbtn" value=""/></div>
+</div>
+<div id="datePlugin"></div>
+<script src="js/jquery-1.11.2.min.js"></script>
+<script src="js/videoManage.js"></script>
+<script src="lib/common.js"></script>
+<script type="text/javascript" src="js/date.js"></script>
+<script>
+    var _hmt = _hmt || [];
+    (function () {
+        var hm = document.createElement("script");
+        hm.src = "https://hm.baidu.com/hm.js?cec4bc1d94c919e79ea77ea62778bf41";
+        var s = document.getElementsByTagName("script")[0];
+        s.parentNode.insertBefore(hm, s);
+    })();
+    $(document).ready(function () {
+        $(".select_box").click(function (event) {
+            event.stopPropagation();
+            $(this).find(".option").toggle();
+            $(this).parent().siblings().find(".option").hide();
+        });
+        $(document).click(function (event) {
+            var eo = $(event.target);
+            if ($(".select_box").is(":visible") && eo.attr("class") != "option" && !eo.parent(".option").length)
+                $('.option').hide();
+        });
+        /*赋值给文本框*/
+        $(".option a").click(function () {
+            var value = $(this).text();
+            $(this).parent().siblings(".select_txt").text(value);
+            $("#select_value").val(value)
+        })
+    });
+
+    function timestampToTime(timestamp) {
+        var date = new Date(timestamp * 1000); //时间戳为10位需*1000，时间戳为13位的话不需乘1000
+        Y = date.getFullYear() + '-';
+        M = (date.getMonth() + 1 < 10 ? '0' + (date.getMonth() + 1) : date.getMonth() + 1) + '-';
+        D = date.getDate() < 10 ? '0' + date.getDate() + ' ' : date.getDate() + '  ';
+        h = date.getHours() < 10 ? '0' + date.getHours() + ':' : date.getHours() + ':';
+        m = date.getMinutes() < 10 ? '0' + date.getMinutes() + ':' : date.getMinutes() + ':';
+        s = date.getSeconds() < 10 ? '0' + date.getSeconds() : date.getSeconds();
+        return Y + M + D;
+    }
+
+    function timestampToTimeNow() {
+        var date = new Date(); //时间戳为10位需*1000，时间戳为13位的话不需乘1000
+        Y = date.getFullYear() + '-';
+        M = (date.getMonth() + 1 < 10 ? '0' + (date.getMonth() + 1) : date.getMonth() + 1) + '-';
+        D = date.getDate() < 10 ? date.getDate() + ' ' : date.getDate() + '  ';
+        h = date.getHours() < 10 ? '0' + date.getHours() + ':' : date.getHours() + ':';
+        m = date.getMinutes() < 10 ? '0' + date.getMinutes() + ':' : date.getMinutes() + ':';
+        s = date.getSeconds() < 10 ? date.getSeconds() : date.getSeconds();
+        return Y + M + D;
+    }
+
+    var nowTime = timestampToTimeNow();
+    $('#beginTime').val(nowTime);
+    $('#endTime').val(nowTime);
+    $('.search-btn').click(function () {
+        var className = $('.select_class').html(),
+            classStartTime = $('#beginTime').val(),
+            classEndTime = $('#endTime').val();
+        var classId = '';
+        if (className == '擒妖捉马') {
+            classId = 20001
+        } else {
+            classId = 20002
+        }
+        var startTimeObj = classStartTime.split('-');
+        var endTimeObj = classEndTime.split('-');
+        var startY = startTimeObj[0],
+            startM = startTimeObj[1],
+            startD = startTimeObj[2];
+        var endY = endTimeObj[0],
+            endM = endTimeObj[1],
+            endD = endTimeObj[2];
+        var start = '';
+        var end = '';
+        if (startY > endY) {
+            start = classEndTime;
+            end = classStartTime;
+        } else if (startY < endY) {
+            start = classStartTime;
+            end = classEndTime;
+        } else {
+            if (startM > endM) {
+                start = classEndTime;
+                end = classStartTime;
+            } else if (startM < endM) {
+                start = classStartTime;
+                end = classEndTime;
+            } else {
+                if (startD > endD) {
+                    start = classEndTime;
+                    end = classStartTime;
+                } else if (startD < endD) {
+                    start = classStartTime;
+                    end = classEndTime;
+                } else {
+                    start = classStartTime;
+                    end = classEndTime;
+                }
+            }
+        }
+        $.ajax({
+            type: 'get',
+            url: baseURL + '/program/kungfuHistory.do',
+            data: {
+                'startTime': start + ' 00:00:00',
+                'endTime': end + ' 23:59:59',
+                'type': classId
+            },
+            contentType: "application/x-www-form-urlencoded; charset=utf-8",
+            success: function (result) {
+                result = JSON.parse(result);
+
+                if (result.success) {
+                    var dataArr = result.data;
+                    if (dataArr.length == 0) {
+                        $('.title').hide();
+                        $('.information-w').html('');
+                        setTimeout(function () {
+                            var $li = '<li class="tips">该时间段没有视频</li>';
+                            $('.information-w').append($li);
+                        }, 200)
+                    } else {
+                        var html = '';
+                        for (var i = 0; i < dataArr.length; i++) {
+                            var classInformation = dataArr[i];
+                            var index = 'index' + i;
+                            var time = (timestampToTime(classInformation.kfPublish));
+                            html = '<li>\n' +
+                                '                <div class="section ">' + classInformation.kfDesc + '</div>\n' +
+                                '                <div class="section name password">' + classInformation.pwd + '</div>\n' +
+                                '                <div class="section name time">' + time + '</div>\n' +
+                                '                <span id="index' + i + '" style="display: none;">' + '播放时间：' + time + '播放栏目：' +  classInformation.kfDesc + '   ' + '播放地址：' + 'http://m.cctvjy.cn/' + '/manageVideo.html?videoId=' + classInformation.id + '   ' + '播放密码：' + + classInformation.pwd +  '</span>\n' +
+                                '                <div class="section name btn play" data-id="' + classInformation.id + '">播放</div>\n' +
+                                '                <div class="section name btn ctrl-c" onclick="copyToClipboard(' + index + ')" data-id="' + classInformation.id + '">复制链接</div>\n' +
+                                '    </li>' + html
+                        }
+                        $('.title').show();
+                        $('.information-w').html(html);
+                    }
+                }
+            },
+            error: function () {
+
+            }
+        });
+    });
+    $('.x3_wap').delegate('.play', 'click', function () {
+        var videoId = $(this).attr('data-id');
+        window.location.href = '/manageVideo.html?videoId=' + videoId;
+    });
+    function copyToClipboard(elementId) {
+        // 创建元素用于复制
+        var aux = document.createElement("input");
+
+        // 获取复制内容
+        var content = $(elementId).html();
+
+        // 设置元素内容
+        aux.setAttribute("value", content);
+
+        // 将元素插入页面进行调用
+        document.body.appendChild(aux);
+
+        // 复制内容
+        aux.select();
+
+        // 将内容复制到剪贴板
+        document.execCommand("copy");
+
+        // 删除创建元素
+        document.body.removeChild(aux);
+    }
+    $(function () {
+        $('#beginTime').date();
+        $('#endTime').date();
+    });
+</script>
+</body>
+</html>

@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang=zh-cmn-Hans>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0;"/>
+    <meta name="apple-mobile-web-app-capable" content="yes"/>
+    <meta name="apple-mobile-web-app-status-bar-style" content="black"/>
+    <meta name="format-detection" content="telephone=no"/>
+    <title>弘学教育</title>
+    <meta name="keywords" content="A股头条"/>
+    <meta name="description" content="A股头条"/>
+    <script src="js/jquery.js"></script>
+    <script src="js/swiper.min.js"></script>
+    <script src="js/main.js"></script>
+    <link rel="stylesheet" href="css/style.css" type="text/css"/>
+    <link rel="stylesheet" href="css/list.css" type="text/css"/>
+    <link href="css/main.css" rel="stylesheet" type="text/css"/>
+    <link href="css/header.css" rel="stylesheet" type="text/css"/>
+    <link rel="stylesheet" href="css/common-mobile.css">
+    <link rel="stylesheet" href="css/liveCourse.css">
+    <style>
+        .tag-list {
+            margin: 100px 0;
+        }
+
+        .tag-list .head {
+            display: block;
+            color: #289CE7;
+            clear: both;
+            padding: 10px;
+            text-align: center;
+        }
+
+        .tag-list .head strong {
+            border-bottom: 2px solid #289CE7;
+            display: inline-block;
+            padding: 0px 10px;
+            font-size: 16px;
+            font-weight: normal;
+        }
+
+        .tag-list .tag-section {
+            display: block;
+            clear: both;
+            overflow: hidden;
+            border-top: 1px solid #ded3b9;
+            border-left: 1px solid #ded3b9;
+        }
+
+        .tag-list .tag-section .tag-item {
+            display: block;
+            float: left;
+            width: 50%;
+        }
+
+        .tag-list .tag-section .tag-item span {
+            display: block;
+            color: #353535;
+            text-align: center;
+            padding: 10px;
+            border: 1px solid #ded3b9;
+            margin-left: -1px;
+            margin-top: -1px;
+            text-transform: uppercase;
+            text-overflow: ellipsis;
+            overflow: hidden;
+            white-space: nowrap;
+        }
+        .x5_nav a:before {
+            margin: 0 auto 6px auto;
+        }
+        .x5_nav .nav_open:before {
+            background: url(images/nav-open-hover.png);
+        }
+        
+        @media (min-width: 800px) {
+            body {
+                max-width: 640px;
+                position: relative;
+                margin: 0 auto;
+            }
+            body .x5_nav {
+                max-width: 640px;
+                position: fixed;
+                margin: 0 auto;
+                left: 50%;
+            }
+
+            .video {
+                width: 640px;
+                height: 300px;
+            }
+            .content .nav {
+                height: 70px;
+                line-height: 70px;
+                font-size: 22px;
+            }
+            .content .nav .current {
+                padding-bottom: 6px;
+                border-bottom: 4px solid #fa424e;
+            }
+            .content .list-con .List li,
+            .content .list-con .course li{
+                width: 24%;
+                font-size: 24px;
+                height: 50px;
+                line-height: 50px;
+                margin-right: 2%;
+            }
+            .content .list-con .course {
+                margin: 24px 0;
+            }
+
+            .content .list-con {
+                background: #f2f2f2;
+                padding-left: 30px;
+                padding-bottom: 60px;
+                padding-right: -10px;
+            }
+        }
+    </style>
+</head>
+<body>
+<div class="x5_nav">
+    <a href="indexInfo.html" class="nav_index">资讯中心</a>
+    <a href="indexColumn.html" class="nav_video ">视频中心</a>
+    <a href="indexVideo_openclass.html" class="nav_open" style="color: #ff0000;">公开课</a>
+    <!-- <a href="news.php" class="nav_so">产品简介</a>
+   -->
+</div>
+
+<div class="video" id="video"></div>
+<div class="content">
+    <div class="nav cf">
+        <div class="list"><span class="current">今日直播</span></div>
+        <div class="history-course"><a href="phoneVideoHis.html">往期回顾</a></div>
+    </div>
+    <div class="list-con">
+        <ul class="List cf">
+            <li>时间</li>
+            <li>主讲</li>
+            <li>节目名称</li>
+            <li>状态</li>
+        </ul>
+    </div>
+</div>
+
+<script src="lib/moment.js"></script>
+<script src="js/MyTime.js"></script>
+<script>
+    DEBUG = false;
+    window.g_time = new MyTime();
+    window.t = window.g_time;
+</script>
+<script src="lib/zepto.min.js"></script>
+<script src="lib/initFont.js"></script>
+<script src="lib/common.js"></script>
+<script src="lib/require.js" data-main="js/liveCourse"></script>
+<script>
+    var _hmt = _hmt || [];
+    (function() {
+        var hm = document.createElement("script");
+        hm.src = "https://hm.baidu.com/hm.js?cec4bc1d94c919e79ea77ea62778bf41";
+        var s = document.getElementsByTagName("script")[0];
+        s.parentNode.insertBefore(hm, s);
+    })();
+    if (IsPC()) {
+        var $x5_nav = $('.x5_nav');
+        var width = $x5_nav.width() / 2;
+        $x5_nav.css('margin-left', -width);
+    }
+</script>
+</body>
+</html>

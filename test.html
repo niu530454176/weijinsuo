@@ -1,0 +1,36 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+<script src="js/jquery-1.11.1.min.js"></script>
+<script>
+    var url = 'http://117.78.26.13:5090/appTransCenter/getNewestSubscription';
+    var data = JSON.stringify({
+        'reqVersion': '1.0.0',
+        'reqData': {
+            'reqSession': '1517880687600',
+            'firmCode': '14',
+            'count': '2'
+        }
+    });
+    $.ajax({
+        type: "post",
+        url: url,
+        contentType: "application/json",
+        data: data,
+        success: function (result) {
+            console.log(result);
+        },
+        error: function (result) {
+            // console.log("error");
+        }
+    })
+</script>
+</body>
+</html>

@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,minimum-scale=1,maximum-scale=1">
+    <title>Document</title>
+    <!-- 最新版本的 Bootstrap 核心 CSS 文件 -->
+    <link rel="stylesheet" type="text/css" href="http://www.jq22.com/jquery/bootstrap-3.3.4.css">
+    <link rel="stylesheet" href="css/mpicker.css">
+    <style type="text/css">
+    /*自定义样式*/
+    body,html{
+        margin: 0;
+        padding: 0;
+    }
+    html{
+        font-size:10px;
+    }
+    body {
+        font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
+        font-size: 14px;
+        line-height: 1.42857143;
+        color: #333;
+        background-color: #fff;
+    }
+    
+    .slide-wapper {
+        padding:20px;
+        overflow-y: scroll;
+         /* background: #eee; */
+    }
+
+    </style>
+</head>
+
+<body>
+    <div class="slide-wapper">
+        <div class="slide-item">
+            <div class="console"></div>
+
+                <h4>二级城市联动选择</h4>
+                <input type="text" class="select-value1 form-control" value="广东省-东莞市">
+
+        </div>
+    </div>
+    <script src="http://www.jq22.com/jquery/jquery-1.10.2.js"></script>
+    <script src="js/json.js"></script>
+    <script src="js/jsonExchange.js"></script>
+    <script src="js/mPicker.min.js"></script>
+    <script chartset="UTF-8">
+        console.log(dataJson);
+        $(function() {
+        $('.select-value1').mPicker({
+            level: 2,
+            dataJson: dataJson,
+            Linkage: true,
+            rows: 6,
+            idDefault: true,
+            splitStr: '-',
+            header: '<div class="mPicker-header">两级联动选择插件</div>',
+            confirm: function (json) {
+                console.log(json);
+                console.info('当前选中json：', json);
+                var _this= this;
+                console.info('【json里有带value的情况】');
+                //更新json
+                console.info('3s后更新json...');
+                setTimeout(function(){
+                    _this.container.data('mPicker').updateData.call(_this,level3);
+                    var json = getVal();
+                    var valArr = json.value;
+                    console.info('更新成功!!');
+                    console.info('更新后的value为空', valArr[0], valArr[1]);
+                    console.info('更新后的value拼接值为空', json.result);
+                },3000);
+                
+            },
+            cancel: function (json) {
+            }
+        })
+    });
+    </script>
+
+</body>
+
+</html>

@@ -1,0 +1,65 @@
+.column {
+    margin-bottom: 0.3rem;
+}
+.column .column-wrap .head-line {
+    border-bottom: 1px solid #e6e6e6;
+    border-top: 0.22rem solid #e6e6e6;
+    margin-bottom: 0.24rem;
+}
+.column .column-wrap .head-line .column-head {
+    font-size: 0.36rem;
+    height: 1rem;
+    line-height: 1rem;
+    padding: 0 0.2rem;
+    background: #F5F8FA;
+}
+.column .column-wrap .head-line .column-head .head-left-w {
+    float: left;
+}
+.column .column-wrap .head-line .column-head .head-left-w .head-left {
+    display: flex;
+    align-items: center;
+}
+.column .column-wrap .head-line .column-head .head-left-w .head-left .border {
+    width: 0.08rem;
+    height: 0.3rem;
+    background: #fa424e;
+    margin-right: 0.4rem;
+}
+.column .column-wrap .head-line .column-head .more-btn {
+    float: right;
+}
+.column .column-wrap .head-line .column-head .more-btn img {
+    width: 0.6rem;
+    height: 0.7rem;
+    margin-top: 0.1rem;
+}
+.column .column-wrap .column-list {
+    color: black;
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    justify-content: space-around;
+    padding-left: 0.19rem;
+}
+.column .column-wrap .column-list li {
+    flex: 1;
+}
+.column .column-wrap .column-list li .item-image {
+    width: 3.52rem;
+    height: 2.24rem;
+    background: #d2dbec;
+}
+.column .column-wrap .column-list li .item-image img {
+    width: 100%;
+    height: 100%;
+}
+.column .column-wrap .column-list li .item-name {
+    font-size: 0.28rem;
+    margin: 0.2rem 0;
+}
+.column .column-wrap .column-list li .item-desc {
+    color: #000000;
+    font-size: 0.28rem;
+    margin-bottom: 0.4rem;
+}

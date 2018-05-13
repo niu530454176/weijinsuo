@@ -1,0 +1,267 @@
+/*轮播图片*/
+.banner {
+    position: relative;
+    width: 100%;
+    padding-bottom: 10px;
+    height: 180px;
+}
+
+.banner .slider {
+    display: block;
+    overflow: hidden;
+    position: relative;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 180px;
+}
+
+.banner .slider .sliderlist {
+    position: absolute;
+    left: 0;
+    top: 0px;
+    width: 100%;
+    height: 100%;
+}
+
+.banner .slider .sliderlist::after {
+    clear: both;
+}
+
+.banner .slider .sliderlist li {
+    float: left;
+    width: 100%;
+    display: block;
+    text-align: center;
+    height: 100%;
+    vertical-align: middle;
+}
+
+.banner .slider .sliderlist li a {
+    display: block;
+    height: 100%;
+    vertical-align: middle;
+}
+
+.banner .slider .sliderlist li span {
+    margin: 0 auto;
+    display: table-cell;
+    vertical-align: middle;
+}
+
+.banner .slider .sliderlist li img {
+    width: 100%;
+    vertical-align: middle;
+    height: 180px;
+}
+
+.banner .slider #pagenavi {
+    position: absolute;
+    left: 0;
+    bottom: .25rem;
+    text-align: center;
+    width: 100%;
+}
+
+.banner .slider #pagenavi a {
+    display: inline-block;
+    width: 4.1%;
+    height: 3px;
+    margin: 0 20px;
+    background: #aaa;
+}
+
+.banner .slider #pagenavi a.active {
+    background: #f00;
+}
+
+/*banner css*/
+.goods-det-banner {
+    width: 100%;
+    overflow: hidden;
+    background: #fff;
+    margin-bottom: 5px;
+}
+
+.goods-det-banner .swipe-wrap .wrap {
+    height: 220px;
+    float: left;
+    position: relative;
+    text-align: center;
+    font-size: 18px;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: -webkit-flex;
+    display: flex;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    -webkit-justify-content: center;
+    justify-content: center;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    -webkit-align-items: center;
+    align-items: center;
+}
+
+.goods-det-banner .swipe-wrap a {
+    display: block;
+}
+
+.goods-det-banner .swipe-wrap .wrap .pic {
+    display: block;
+    height: inherit;
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: cover;
+    width: 100%;
+}
+
+.goods-det-banner .navlist {
+    position: absolute;
+    text-align: center;
+    left: 0px;
+    bottom: 5px;
+    width: 100%;
+    height: 10px;
+}
+
+.goods-det-banner .navlist li, .goods-det-banner .navlist span {
+    display: inline-block;
+    border: 1px solid #a8a8a8;
+    background: #a8a8a8;
+    height: 8px;
+    width: 8px;
+    border-radius: 50%;
+}
+
+.goods-det-banner .navlist li.on, .goods-det-banner .navlist span.swiper-pagination-bullet-active {
+    background: #4a90e2;
+    border: 1px solid #4a90e2;
+}
+
+/*banner end*/
+.qmenu{
+	overflow: hidden;
+	width: 100%;
+}
+.qmenu li{
+	width: 33.333%;
+	text-align: center;
+	float: left;
+	position: relative;
+}
+.qmenu li a{
+	padding-top: 2.5px;
+	padding-bottom: 2.5px;
+	display: block;
+	color: #181818;
+}
+.qmenu li a:active{
+	background: #e8e8e8;
+	border-radius: 10px;
+}
+.qmenu li i{
+	display: inline-block;
+	width: 40px;
+	height: 40px;
+	border-radius: 50%;
+	background-color: none;
+	background-repeat: no-repeat;
+	background-position: center center;
+	background-size: 30px 30px;
+}
+
+.qmenu li b{
+	position: absolute;
+	display: block;	border-radius: 8px;
+	height: 18px;
+	padding: 0px 5px;
+	border:2px solid #fff;
+	background: red;
+	color:#fff;
+	font-weight: normal;
+	font-size: 12px;
+	top: 0px;
+	right: 15%;
+}
+.qmenu li p {
+    font-size: 12px;
+    /* height: 20px; */
+    /* line-height: 20px; */
+    overflow: hidden;
+    display: block;
+}
+.qmenu {
+    overflow: hidden;
+    width: 100%;
+}
+
+.qmenu li {
+    width: 33.333%;
+    text-align: center;
+    float: left;
+    position: relative;
+>>>>>>> c4b87a5ad676503b468ffdc318440a4c105db6a5
+}
+
+.qmenu li a {
+    padding-top: 2.5px;
+    padding-bottom: 2.5px;
+    display: block;
+    color: #181818;
+}
+
+.qmenu li a:active {
+    background: #e8e8e8;
+    border-radius: 10px;
+}
+
+.a-active {
+    background: #e8e8e8;
+    border-radius: 10px;
+}
+
+.qmenu li i {
+    display: inline-block;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: 40px 40px;
+}
+
+.qmenu li b {
+    position: absolute;
+    display: block;
+    border-radius: 8px;
+    height: 18px;
+    padding: 0px 5px;
+    border: 2px solid #fff;
+    background: red;
+    color: #fff;
+    font-weight: normal;
+    font-size: 12px;
+    top: 0px;
+    right: 15%;
+}
+
+.qmenu li p {
+    font-size: 12px;
+    /* height: 20px; */
+    /* line-height: 20px; */
+    overflow: hidden;
+    display: block;
+}
+
+@media screen and (max-width: 365px) {
+    .qmenu li p {
+        font-size: 14px;
+    }
+}
+
+.swiper-main-pics {
+    height: 117px;
+    position: relative;
+}
+

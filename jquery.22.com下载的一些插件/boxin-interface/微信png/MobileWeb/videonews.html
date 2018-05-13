@@ -1,0 +1,286 @@
+<!DOCTYPE html>
+<html lang=zh-cmn-Hans>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0;"/>
+    <meta name="apple-mobile-web-app-capable" content="yes"/>
+    <meta name="apple-mobile-web-app-status-bar-style" content="black"/>
+    <meta name="format-detection" content="telephone=no"/>
+    <title>弘学教育</title>
+    <meta name="keywords" content=""/>
+    <meta name="description" content=""/>
+    <script src="js/jquery.js"></script>
+    <script src="js/swiper.min.js"></script>
+    <script src="js/main.js"></script>
+    <link rel="stylesheet" href="css/style.css" type="text/css"/>
+    <link rel="stylesheet" href="css/list.css" type="text/css"/>
+    <link href="css/header.css" rel="stylesheet" type="text/css"/>
+    <link rel="stylesheet" href="css/video.css" type="text/css"/>
+    <link rel="stylesheet" href="css/common.css">
+    <style>
+        .login-wrap {
+            background-color: #FFF;
+            width: 5.4rem;
+            height: 3.6rem;
+            position: fixed;
+            left: 50%;
+            margin-left: -2.7rem;
+            top: 22%;
+            margin-top: -2.05rem;
+            padding-top: 0.5rem;
+        }
+
+        .form {
+            width: 3.2rem;
+            margin: 0 auto;
+        }
+
+        .form input {
+            width: 2.9rem;
+            margin-bottom: 0.1rem;
+            padding: 0.1rem;
+        }
+
+        .form input[type=submit] {
+            border: none;
+            background-color: #E42837;
+            font-size: 0.28rem;
+            color: #FFF;
+            cursor: pointer;
+            width: 3.2rem;
+            margin-top: 0.5rem;
+        }
+
+        .login-mask {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(22, 22, 22, 0.8);
+            z-index: 999;
+        }
+
+        .toptit h3 {
+            color: #E42837;
+        }
+
+        .x5_nav .nav_video:before {
+            background: url(images/nav-open-hover.png);
+        }
+        .banner .slider #pagenavi {
+            bottom: .12rem;
+        }
+        .banner .slider #pagenavi a {
+            width: 5%;
+            height: 0.03rem;
+        }
+        @media (min-width: 700px){
+            .course .video {
+                height: 300px;
+            }
+            .login-mask {
+                width: 640px;
+                height: 600px;
+                position: absolute;
+                left: 0;
+                top: 0;
+                font-size: 20px;
+                line-height: 60px;
+            }
+            .form input {
+                display: inline-block;
+                width: 360px;
+                margin-bottom: 0.1rem;
+                margin-left: 20px;
+                margin-top: -20px;
+            }
+            .login-wrap {
+                width: 440px;
+                height: 250px;
+                position: absolute;
+                left: 100px;
+                top: 100px;
+                margin: 0;
+                padding: 0;
+                padding-bottom: 20px;
+            }
+            .form input[type=submit] {
+                width: 400px;
+                height: 50px;
+                line-height: 18px;
+                margin: 0 auto;
+                margin-top: 20px;
+                font-size: 30px;
+                font-weight: bold;
+                margin-left: 20px;
+            }
+            .x5_headt {
+                height: 270px;
+            }
+            .banner .slider .sliderlist li img {
+                height: 270px;
+            }
+            .banner .slider {
+                height: 270px;
+            }
+            .banner .slider #pagenavi a {
+                height: 3px;
+                margin: 0 20px;
+            }
+        }
+    </style>
+
+    <script type="text/javascript" charset="utf-8" src="js/jquery-1.11.2.min.js"></script>
+    <script type="text/javascript" charset="utf-8" src="js/layer.js"></script>
+</head>
+<body>
+<div class="x5_nav">
+    <a href="indexInfo.html" class="nav_index">资讯中心</a>
+    <a href="indexColumn.html" class="nav_video" style="color: #ff0000;">视频中心</a>
+    <a href="indexVideo_openclass.html" class="nav_open">公开课</a>
+    <!-- <a href="news.php" class="nav_so">产品简介</a>
+   -->
+</div>
+<div class="x5_wap">
+    <header class="x5_headt">
+        <script type="text/javascript" src="js/touchslider.js"></script>
+        <div align="center">
+            <div class="banner">
+                <div id="slider" class="slider">
+                    <ul id="sliderlist" class="sliderlist">
+                        <li><img src="images/c5.png"></li>
+                        <li><img src="images/c7.png"></li>
+                        <li><img src="images/c6.png"></li>
+                        <li><img src="images/c6.jpg"></li>
+                    </ul>
+                    <div id="pagenavi">
+                        <a class="active" href="#"></a>
+                        <a href="#"></a>
+                        <a href="#"></a>
+                        <a href="#"></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <script type="text/javascript" src="js/banner.js"></script>
+        <!--轮播图片-end-->
+    </header>
+    <div class="swiper-slide wrap">
+        <ul class="qmenu">
+            <li>
+                <a href="indexVideo.html">
+                    <i class="cor01" style="width: 60px; height: 60px; padding: 10px;"><img width="100%"
+                                                                                            src="./images/qmenu-ico07.png"
+                                                                                            alt=""></i>
+                    <p>公开课</p>
+                </a>
+            </li>
+
+            <li type="20001" id="20001">
+                <a>
+                    <i class="cor01" style="width: 60px; height: 60px; padding: 10px;"><img width="100%"
+                                                                                            src="./images/qmenu-ico08.png"
+                                                                                            alt=""></i>
+                    <p>擒妖捉马</p>
+                </a>
+            </li>
+
+
+            <li type="20002" id="20002">
+                <a> <!-- showDetail('jrfxb','20283') -->
+                    <i class="cor01" style="width: 60px; height: 60px; padding: 10px;"><img width="100%"
+                                                                                            src="./images/qmenu-ico09.png"
+                                                                                            alt=""></i>
+
+                    <p>涨停为王</p>
+                </a>
+            </li>
+
+            <li type="10003" id="10003">
+                <a>
+                    <i class="cor01" style="width: 60px; height: 60px; padding: 10px;"><img width="100%"
+                                                                                            src="./images/qmenu-ico010.png"
+                                                                                            alt=""></i>
+
+                    <p>弘学情报站</p>
+                </a>
+            </li>
+            <li type="10004" id="10004">
+                <a>
+                    <i class="cor01" style="width: 60px; height: 60px; padding: 10px;"><img width="100%"
+                                                                                            src="./images/qmenu-ico011.png"
+                                                                                            alt=""></i>
+
+                    <p>黄金十二点</p>
+                </a>
+            </li>
+            <li type="10005" id="10005">
+                <a>
+                    <i class="cor01" style="width: 60px; height: 60px; padding: 10px;"><img width="100%"
+                                                                                            src="./images/qmenu-ico012.png"
+                                                                                            alt=""></i>
+                    <p>大咖评论室</p>
+                </a>
+            </li>
+        </ul>
+    </div>
+    <script>
+        var swiper = new Swiper('.swiper-container', {
+            // pagination: '.swiper-pagination',
+            paginationClickable: true,
+            autoplay: false
+        });
+    </script>
+
+
+    <div class="toptit">
+        <h3><a href="indexColumn.html" title="视频">视频中心</a> &gt;<span class="column-title"></span></h3>
+        <p>重大消息先知道！最新最快的证券资讯！实时更新！</p>
+    </div>
+
+    <div class="video-w">
+        <div class="course"></div>
+        <!--<div class="title"><h1>2017年12月29日涨停先锋</h1></div>-->
+        <!--<div class="cDGray">-->
+        <!--<ul>-->
+        <!--<li>所属分类：<span>涨停先锋</span></li>-->
+        <!--</ul>-->
+        <!--</div>-->
+        <!--<div class="word">视频介绍：2017年12月29日涨停先锋<br/><br/></div>-->
+    </div>
+</div>
+<div class="login-mask" style="display: none">
+    <div class="login-wrap">
+        <div style="text-align: center;margin-bottom: 0.2rem">当前视频已加密，请输入正确口令</div>
+        <div class="form">
+            <ul id="pass-list">
+                <li><input id="passw" type="text" placeholder="请输入"></li>
+                <li><input id="submit" type="submit"></li>
+            </ul>
+        </div>
+    </div>
+    <script src="lib/zepto.min.js"></script>
+    <script src="lib/initFont.js"></script>
+    <script src="lib/common.js"></script>
+    <script src="lib/require.js" data-main="js/videonews"></script>
+</div>
+<script>
+    var _hmt = _hmt || [];
+    (function() {
+        var hm = document.createElement("script");
+        hm.src = "https://hm.baidu.com/hm.js?cec4bc1d94c919e79ea77ea62778bf41";
+        var s = document.getElementsByTagName("script")[0];
+        s.parentNode.insertBefore(hm, s);
+    })();
+    var $x5_nav = $('.x5_nav');
+    var width = $x5_nav.width() / 2;
+    $x5_nav.css('margin-left', -width);
+    if (IsPC()) {
+        $('.login-wrap div:eq(0)').css('marginBottom', 0);
+        $('.login-mask').height($(window).width());
+    }
+
+</script>
+</body>
+</html>
