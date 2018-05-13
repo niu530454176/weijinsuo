@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Title</title>
+</head>
+<body>
+<script>
+	//	var add = new Function('num1','num2','var sum =num1 + num2; return sum;');
+	//	console.log(add(1, 2));
+
+	//	function add(num1, num2) {
+	//		return num1() + num2();
+	//	}
+	//	var result = add(function () {
+	//		return 1;
+	//	},function () {
+	//		return 2;
+	//	});
+	//	console.log(result);
+
+	//	function huanying() {
+	//		alert('欢迎');
+	//	}
+	//	function zaijian() {
+	//		alert('再见');
+	//	}
+	//	function yanchi(fun, sec) {
+	//		setTimeout(fun, sec * 1000);
+	//	}
+	//	yanchi(huanying, 2);
+	//	yanchi(zaijian, 10);
+
+
+	/*	function getRandom() {
+	 return Math.random() * 100;
+	 }
+
+	 function checkNum(fun) {
+	 if (fun() > 60) {
+	 return '合格';
+	 } else {
+	 return '不合格';
+	 }
+	 }
+	 var result = checkNum(getRandom);
+	 console.log(result);*/
+
+	//	自执行函数  立即执行函数  前面加运算符会自执行
+//	好处 ：利用自身函数执行特点  产生局部变量  不影响全局变量
+	/*	(function (num1, num2) {
+	 return num1 + num2;
+	 })(100, 200);*/
+
+//	(function (a) {
+//		alert(a);
+//	})(5);
+//	(function (a, b) {
+//		alert(a);
+//		console.log(a, b);
+//	}(6, 7));
+//	!function (a) {
+//		alert(a)
+//	}(8);
+
+//	function fn() {
+//		var time = 1;
+//		var n =  function () {
+//			return time++;
+//		};
+//		return n;
+//	}
+//	var b = fn();
+//	setInterval(function () {
+//		console.log('小牛打了杨超' + b() + '板凳');
+//	}, 1000);
+//
+//	(function (a,b) {
+//		alert(a + b);
+//	})(4,6);
+//
+//	(function (age, name) {
+//		alert ('我叫'+ name + ',今年' + age + '岁');
+//	})(15,'小明');
+
+//	闭包的实际应用
+/*	var getValue, setValue;
+	(function () {
+		var select = 0;
+		getValue = function () {
+			return select;
+		};
+		setValue = function (v) {
+			select = v;
+		}
+	})();*/
+
+	function Car() {
+		this.color = '#333';
+	}
+	Car.prototype = {
+		luntai: 4,
+		renshu: 5,
+		color: '#333',//原型属性
+		x: 0,
+		go: function () {//原型方法
+			var _this = this;
+			setInterval(function () {
+				_this.x++;
+			}, 100)
+		}
+	};
+	var car = new Car();
+	function Bus() {
+	}
+	Bus.prototype = new Car();
+	var bus = new Bus();
+	Bus.prototype.shoupiaoyuan = '售票员甲';
+	Bus.prototype.constructor = Bus;//构造函数的指向需要手动指向
+	console.log(bus.constructor === Car);
+	console.log(bus.constructor === Bus);
+//	console.log(Bus.prototype.constructor);
+</script>
+</body>
+</html>

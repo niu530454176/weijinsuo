@@ -1,0 +1,2 @@
+/*! spmseajs 2017-06-05 */
+define("MOD_ROOT/topbar/topbar",["jquery"],function(a,b,c){function d(){console.log("@@"),e(".logo").click(function(){alert("欢迎光临")})}var e=a("jquery");c.exports.__id="topbar",c.exports.init=d});

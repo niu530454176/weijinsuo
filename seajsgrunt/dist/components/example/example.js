@@ -1,0 +1,2 @@
+/*! spmseajs 2017-06-05 */
+define("MOD_ROOT/example/example",[],function(a,b,c){function d(a){this.init(a)}function e(a){new d(a).append()}d.prototype={init:function(a){this.$target=a,alert("I'm Example instance init !")},append:function(){this.$target.html("I'm Example DOM !")}},c.exports.__id="example",c.exports.init=e});

@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Title</title>
+	<link rel="stylesheet" href="css/cssreset.css">
+	<style type="text/css">
+		canvas {
+			background-color: #CACACA;
+			border: 1px solid black;
+		}
+	</style>
+</head>
+<body>
+
+<canvas id="myCanvas" width="1000" height="400"></canvas>
+
+<script type="text/javascript" src="js/jquery.js"></script>
+<script type="text/javascript">
+	var $myCanvas = $('#myCanvas');
+	var myCanvas = $myCanvas[0];
+	var ctx = myCanvas.getContext('2d');
+
+	var date;
+	var rotate = 0;
+
+	function update() {
+		date = new Date();
+
+		rotate = 0;
+		ctx.beginPath();
+		ctx.restore();
+		ctx.clearRect(0, 0, 1000, 400);
+		ctx.save();
+
+		for (var i = 0; i < 60; i++) {
+			ctx.save();
+			ctx.translate(300, 200);
+			ctx.rotate(Math.PI / 180 * (6 * rotate++));
+			ctx.lineWidth = 1;
+			ctx.moveTo(0, -140);
+			ctx.lineTo(0, -150);
+			ctx.stroke();
+			ctx.restore();
+		}
+
+		var h = date.getHours() % 12 / 12;
+		ctx.save();
+		ctx.beginPath();
+		ctx.translate(300, 200);
+		ctx.rotate(Math.PI / 180 * (360 * h));
+		ctx.lineWidth = 4;
+		ctx.moveTo(0, 0);
+		ctx.lineTo(0, -80);
+		ctx.stroke();
+		ctx.restore();
+
+		var m = date.getMinutes() / 60;
+		ctx.save();
+		ctx.beginPath();
+		ctx.translate(300, 200);
+		ctx.rotate(Math.PI / 180 * (360 * m));
+		ctx.lineWidth = 3;
+		ctx.moveTo(0, 0);
+		ctx.lineTo(0, -100);
+		ctx.stroke();
+		ctx.restore();
+
+		var s = date.getSeconds() / 60;
+		ctx.save();
+		ctx.beginPath();
+		ctx.translate(300, 200);
+		ctx.rotate(Math.PI / 180 * (360 * s));
+		ctx.strokeStyle = "red";
+		ctx.lineWidth = 1;
+		ctx.moveTo(0, 0);
+		ctx.lineTo(0, -110);
+		ctx.stroke();
+		ctx.restore();
+	}
+	setInterval(update, 1000);
+	update();
+	console.log($('*').filter(function () {
+		return $(this).width() > 100;
+	}));
+</script>
+</body>
+</html>

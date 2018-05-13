@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Title</title>
+	<link rel="stylesheet" href="css/common.css">
+</head>
+<body>
+<div id="main" style="width: 1300px;height:400px;"></div>
+<script type="text/javascript" src="js/appdate.js"></script>
+<script type="text/javascript" src="js/jquery.js"></script>
+<script type="text/javascript" src="js/echarts.common.min.js"></script>
+<script>
+	// 基于准备好的dom，初始化echarts实例
+	myData.length = 12;
+	console.log(myData);
+	var appNameArr = [],
+		useNumArr = [],
+		zengfuArr = [];
+	for (var i in myData) {
+		appNameArr.push(myData[i].AppName);
+		useNumArr.push(myData[i].UseNum);
+		zengfuArr.push(myData[i].Growth);
+	}
+	// 指定图表的配置项和数据
+	var myChart = echarts.init(document.getElementById('main'));
+	var colors = ['#b8f346', '#91d1c6'];
+	var option = {
+		color: colors,
+		title: {
+			text: '2017年4月全部行业APP月度独立设备数',
+			x: 'center',
+			y: '4%'
+		},
+		itemStyle: {
+			normal: {
+				barBorderRadius: [10, 10, 0, 0]
+			}
+		},
+		tooltip: {
+			trigger: 'axis',
+			axisPointer: {
+				type: 'cross',
+				crossStyle: {
+					color: '#0d990a'
+				}
+			},
+		},
+		legend: {
+			data: ['设备数', '环比增幅'],
+			x: '70%',
+			y: '4%'
+		},
+		xAxis: {
+			data: appNameArr
+		},
+		yAxis: [
+			{
+				type: 'value',
+				name: '设备数',
+				axisLine: {
+					lineStyle: {
+						color: colors[0]
+					}
+				}
+			},
+			{
+				type: 'value',
+				name: '环比增幅',
+				axisLine: {
+					lineStyle: {
+						color: colors[1]
+					}
+				}
+			}
+		],
+		series: [
+			{
+				name: '设备数',
+				type: 'bar',
+				data: useNumArr,
+				barWidth : 30
+
+			},
+			{
+				name: '环比增幅',
+				type: 'line',
+				yAxisIndex: 1,
+				smooth: true,
+				data: zengfuArr
+			}
+		]
+	};
+
+	// 使用刚指定的配置项和数据显示图表。
+	myChart.setOption(option);
+</script>
+</body>
+<html>

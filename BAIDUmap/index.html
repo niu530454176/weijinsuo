@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<meta name="keywords" content="百度地图,百度地图API，百度地图自定义工具，百度地图所见即所得工具" />
+	<meta name="description" content="百度地图API自定义地图，帮助用户在可视化操作下生成百度地图" />
+	<title>百度地图API自定义地图</title>
+	<!--引用百度地图API-->
+	<link rel="stylesheet" href="css/cssreset.css">
+	<style type="text/css">
+		.map-info {
+			position: relative;
+			zoom:1}
+
+		.map-info h6 {
+			padding-bottom: 5px
+		}
+
+		.map-info h6 .tit {
+			font-size: 14px;
+			color: #66c;
+			font-weight: bold;
+			margin-right: 10px
+		}
+
+		.map-info h6 .tit:hover,.map-info h6 .subbranch:hover {
+			background-color: #66c;
+			color: #fff
+		}
+
+		.map-info h6 .subbranch {
+			color: #66c;
+			margin-left: 5px
+		}
+
+		.map-info .map-remark {
+			padding-bottom: 5px;
+			zoom:1}
+
+		.map-info .map-remark:before,.map-info .map-remark:after {
+			content: "";
+			display: table
+		}
+
+		.map-info .map-remark:after {
+			clear: both
+		}
+
+		.map-info .map-remark .rating-stars-small {
+			margin: -1px 10px 0 0
+		}
+
+		.map-info .map-remark .sep {
+			color: #999;
+			padding: 0 10px 0 0
+		}
+
+		.map-info .map-remark .col-sep {
+			margin-right: 10px;
+			color: #999
+		}
+
+		.map-info .map-address {
+			line-height: 22px
+		}
+
+		.map-info .map-address .col-sep {
+			color: #999
+		}
+
+		.map-info .close {
+			position: absolute;
+			top: -5px;
+			right: -10px;
+			width: 9px;
+			height: 9px;
+			background-position: 0 -400px
+		}
+		.map-info .map-remark .comm-per .per {
+			color: #c00;
+			font-family: Verdana,Geneva,sans-serif;
+			padding-left: 5px;
+		}
+	</style>
+	<script type="text/javascript" src="http://api.map.baidu.com/api?v=2.0&ak=pK0H8yF4YmoznsxWIKG4ckfz1rsFEPqR"></script>
+</head>
+
+<body>
+<!--百度地图容器-->
+<div style="width:700px;height:550px;border:#ccc solid 1px;font-size:12px" id="map"></div>
+<script type="text/javascript" src="mapdata.js"></script>
+<script type="text/javascript">
+
+	var markers = [];
+	for(var i in dataArr) {
+		var obj = dataArr[i];
+		markers.push({
+			title: obj.shopName,
+			position: {
+				lat: obj.geoLat,
+				lng: obj.geoLng
+			},
+			imageOffset: {width: 0, height: 3},
+			content: '\
+			<div class="map-info">\
+				<h6>\
+				<a href="/shop/' + obj.shopId + '" title="' + obj.shopName + '" target="_blank" class="tit">' + obj.shopName + '</a>\
+				<a class="igroup" target="_blank" href="http://t.dianping.com/deal/' + obj.shopRecordBean.shopGroupID + '"></a>\
+				<a href="' + obj.branchUrl + '" target="_blank" title="分店" class="subbranch">分店</a>\
+				</h6>\
+				<div class="map-remark">\
+					<span class="comm-per">\
+						<span class="comm-per">人均<em class="per">￥' + obj.avgPrice + '</em></span>\
+					</span>\
+				</div>\
+				<div class="map-address">\
+					<p><em class="col-sep">地址：</em>' + obj.address + '</p>\
+					<p><em class="col-sep">电话：</em>' + obj.phoneNo + '</p>\
+				</div>\
+				<a href="javascript:;" title="" class="close"></a><span class="arrow"></span>\
+			</div>'
+		});
+	}
+
+	//创建和初始化地图函数：
+	function initMap(){
+		createMap();//创建地图
+		setMapEvent();//设置地图事件
+		addMapControl();//向地图添加控件
+		addMapOverlay();//向地图添加覆盖物
+	}
+	function createMap(){
+		map = new BMap.Map("map");
+//		map.centerAndZoom(new BMap.Point(116.424663,39.971925),12);
+		map.centerAndZoom("北京", 10);
+	}
+	function setMapEvent(){
+		map.enableScrollWheelZoom();
+		map.enableKeyboard();
+		map.enableDragging();
+		map.enableDoubleClickZoom()
+	}
+	function addClickHandler(target,window){
+		target.addEventListener("click",function(){
+			target.openInfoWindow(window);
+		});
+	}
+	function addMapOverlay(){
+//		var markers = [
+//			{content:"本次活动地点",title:"我的位置",imageOffset: {width:0,height:3},position:{lat:39.968207,lng:116.424214}},
+//		];
+		for(var index = 0; index < markers.length; index++ ){
+			var point = new BMap.Point(markers[index].position.lng,markers[index].position.lat);
+			var marker = new BMap.Marker(point, {icon: new BMap.Icon('//www.dpfile.com/s/img/map/fancy/' + (index + 1) + '.png', new BMap.Size(23, 35), {
+				offset: new BMap.Size(10, 25)
+			})});
+			var label = new BMap.Label(markers[index].title,{offset: new BMap.Size(25,5)});
+			var opts = {
+				width: 200,
+//				title: markers[index].title,
+				enableMessage: false
+			};
+			var infoWindow = new BMap.InfoWindow(markers[index].content,opts);
+			marker.setLabel(label);
+			addClickHandler(marker,infoWindow);
+			map.addOverlay(marker);
+		};
+		var labels = [
+//			{position:{lng:116.423046,lat:39.970543},content:"我的标记"}
+		];
+		for(var index = 0; index < labels.length; index++){
+			var opt = { position: new BMap.Point(labels[index].position.lng,labels[index].position.lat )};
+			var label = new BMap.Label(labels[index].content,opt);
+			map.addOverlay(label);
+		};
+	}
+	//向地图添加控件
+	function addMapControl(){
+		var scaleControl = new BMap.ScaleControl({anchor:BMAP_ANCHOR_BOTTOM_LEFT});
+		scaleControl.setUnit(BMAP_UNIT_IMPERIAL);
+		map.addControl(scaleControl);
+		var navControl = new BMap.NavigationControl({anchor:BMAP_ANCHOR_TOP_LEFT,type:BMAP_NAVIGATION_CONTROL_LARGE});
+		map.addControl(navControl);
+	}
+	var map;
+	initMap();
+</script>
+</body>
+</html>

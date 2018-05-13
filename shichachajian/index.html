@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>stellar demo</title>
+    <link rel="stylesheet" href="css/reset.css">
+    <style type="text/css">
+        .container {
+            width: 1366px;
+            margin: 0 auto;
+            text-align: center;/*让页面内的img标签居中*/
+        }
+
+        .firstscreen {
+            margin-bottom: 140px;/*第一屏图片比较小，用margin把第一个背景挤下去，否则背景会漏出来*/
+        }
+
+        .bg {
+            width: 1366px;
+            height: 640px;
+            background: no-repeat fixed top center;
+            margin: 0 auto;
+        }
+
+        .img {
+            position: relative;
+            margin-top: -100px;
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <img class="firstscreen" src="images/sy01.png">
+    <div class="bg" style="background-image: url(images/firstbg.jpg)" data-stellar-background-ratio="0.03"></div>
+    <img class="img" src="images/first.png">
+    <div class="bg" style="background-image: url(images/secondbg.jpg)" data-stellar-background-ratio="0.05"></div>
+    <img class="img" src="images/second.png">
+    <div class="bg" style="background-image: url(images/thirdbg.jpg)" data-stellar-background-ratio="0.08"></div>
+    <img class="img" src="images/third.png">
+    <div class="bg" style="background-image: url(images/fourbg.jpg);" data-stellar-background-ratio="0.1"></div>
+    <img class="img" src="images/four.png">
+</div>
+
+<script type="text/javascript" src="js/jquery.js"></script>
+<script type="text/javascript" src="js/jquery.stellar.min.js"></script>
+<script type="text/javascript">
+    $.stellar({horizontalScrolling: false});
+</script>
+</body>
+</html>

@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Title</title>
+	<link rel="stylesheet" href="css/cssreset.css">
+	<style type="text/css">
+		canvas {
+			background-color: #CACACA;
+			border: 1px solid black;
+		}
+	</style>
+</head>
+<body>
+
+<canvas id="myCanvas" width="1000" height="400"></canvas>
+<br>
+颜色：<input type="color" id="pickColor"/>
+粗细：<input type="range" id="pickWidth" min="1" max="10"/>
+<button id="playBtn">播放</button>
+<button id="eraserBtn">切换成橡皮</button>
+
+<script type="text/javascript" src="js/jquery.js"></script>
+<script type="text/javascript">
+	var $myCanvas = $('#myCanvas');
+	var $pickColor = $('#pickColor');
+	var $pickWidth = $('#pickWidth');
+	var $playBtn = $('#playBtn');
+	var $eraserBtn = $('#eraserBtn');
+	var myCanvas = $myCanvas[0];
+	var cxt = myCanvas.getContext("2d");
+	var arr = [];
+	var intervalId = 0;
+	var isPlaying = false;
+	var penType = 'pen';
+
+	cxt.lineCap = "round";
+	cxt.lineJoin = "round";
+
+	var isMouseDown = false;
+
+    $myCanvas.mousedown(function (e) {
+		if(isPlaying) {
+			return;
+		}
+		isMouseDown = true;
+		cxt.beginPath();
+		arr.push({
+			type: 1,
+			strokeStyle: cxt.strokeStyle,
+			lineWidth: cxt.lineWidth
+		});
+	});
+
+	$myCanvas.mouseup(function (e) {
+		isMouseDown = false;
+	});
+
+	$myCanvas.mousemove(function (e) {
+		var mouseX = e.clientX;
+		var mouseY = e.clientY;
+		if (isMouseDown) {
+			if(penType == 'pen') {
+				arr.push({
+					type: 2,
+					mouseX: mouseX,
+					mouseY: mouseY
+				});
+				cxt.lineTo(mouseX, mouseY);
+				cxt.stroke();
+			} else if(penType == 'eraser') {
+				arr.push({
+					type: 5,
+					mouseX: mouseX,
+					mouseY: mouseY
+				});
+				cxt.clearRect(mouseX, mouseY, 5, 5);
+			}
+		}
+	});
+
+	$pickColor.change(function () {
+		var newColor = $(this).val();
+        cxt.strokeStyle = newColor;
+		arr.push({
+			type: 3,
+			strokeStyle: cxt.strokeStyle
+		});
+	});
+
+	$pickWidth.change(function () {
+		var newWidth = $(this).val();
+		cxt.lineWidth = newWidth;
+		arr.push({
+			type: 4,
+			lineWidth: cxt.lineWidth
+		});
+	});
+
+	$playBtn.click(function () {
+		cxt.clearRect(0, 0, $myCanvas.width(), $myCanvas.height());
+		var cloneArr = arr.slice(0);
+		if (cloneArr.length == 0) {
+			return;
+		}
+
+		clearInterval(intervalId);
+		isPlaying = true;
+
+		intervalId = setInterval(function () {
+			var obj = cloneArr.shift();
+			if (obj.type == 1) {
+				cxt.beginPath();
+				cxt.strokeStyle = obj.strokeStyle;
+				cxt.lineWidth = obj.lineWidth;
+			} else if (obj.type == 2) {
+				cxt.lineTo(obj.mouseX, obj.mouseY);
+				cxt.stroke();
+			} else if (obj.type == 3) {
+				cxt.strokeStyle = obj.strokeStyle;
+			} else if (obj.type == 4) {
+				cxt.lineWidth = obj.lineWidth;
+			} else if (obj.type == 5) {
+				cxt.clearRect(obj.mouseX, obj.mouseY, 5, 5);
+			}
+			if (cloneArr.length == 0) {
+				isPlaying = false;
+				clearInterval(intervalId);
+			}
+		}, 10);
+	});
+
+	$eraserBtn.click(function () {
+		if(penType == 'eraser') {
+			penType = 'pen';
+			$eraserBtn.html('切换成橡皮');
+		} else {
+			penType = 'eraser';
+			$eraserBtn.html('切换成画笔');
+		}
+
+	});
+</script>
+</body>
+</html>

@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Title</title>
+</head>
+<body>
+<script>
+	function titleCase(str1, str2) {
+		var arr1, arr2, result = [];
+		if (str2 == undefined) {
+			arr1 = str1.split(' ');
+			for (var i = 0; i < arr1.length; i++) {
+				result.push(arr1[i][0].toUpperCase() + arr1[i].substr(1).toLowerCase())
+			}
+		} else {
+			arr1 = str1.split(' ');
+			arr2 = str2.split(' ');
+			var r = []; //r为存储arr1中有相同字母下标的数组
+			for (var j = 0; j < arr2.length; j++) {
+				for (var k = 1; k < arr1.length; k++) {
+					if (arr1[k] == undefined) {
+						return;
+					}
+					if (arr1[k].toUpperCase() == arr2[j].toUpperCase()) {
+						r.push(k);
+					}
+				}
+			}
+//			先转换驼峰式命名
+			for (var ii = 0; ii < arr1.length; ii++) {
+				result.push(arr1[ii][0].toUpperCase() + arr1[ii].substr(1).toLowerCase());
+			}
+//			然后把相同字符串的再转换为原来的
+			for (var jj = 0; jj < r.length; jj++) {
+				result.splice(r[jj], 1, arr1[r[jj]].toLowerCase());
+			}
+		}
+		console.log(result.join(' '));
+	}
+
+	titleCase('a clash ofof KINGS', 'a an the of'); // should return: 'A Clash of Kings'
+	titleCase('THE WIND IN THE WILLOWS', 'The In'); // should return: 'The Wind in the Willows'
+	titleCase('the quick brown fox') // should return: 'The Quick Brown Fox'
+
+	//老师的正则
+	/*function titleCase(str1, str2) {
+		str1 = str1.toLowerCase();
+		var reg2 = str2 ? eval('/\\s[^' + str2.replace(/\s/g, '|') + ']/gi') : /\s\w/g;
+		return str1[0].toUpperCase() + str1.slice(1).replace(reg2, function (m) {
+				return m.toUpperCase();
+			});
+	}*/
+</script>
+</body>
+</html>

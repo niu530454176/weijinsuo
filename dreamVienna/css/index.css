@@ -1,0 +1,479 @@
+body {
+  width: 100%;
+  background: #f5a7b5 url("../images/container-background-iamge.jpg") no-repeat top center;
+}
+
+.header {
+  width: 100%;
+  height: 40px;
+  background: #f9f9f9;
+}
+.header .row {
+  width: 980px;
+  margin: auto;
+  position: relative;
+}
+.header .row .top {
+  float: left;
+  height: 40px;
+}
+.header .row .left {
+  width: 148px;
+  background: url("../images/header-logo1.jpg") no-repeat center center;
+}
+.header .row .center input {
+  width: 200px;
+  height: 28px;
+  float: left;
+  margin-top: 6px;
+  padding-left: 10px;
+  margin-left: 14px;
+  font-size: 14px;
+  border: 1px solid #cdcdcd;
+}
+.header .row .center a {
+  width: 40px;
+  height: 28px;
+  float: left;
+  background: #ff6147;
+  color: #ffffff;
+  margin-top: 6px;
+  text-align: center;
+  line-height: 28px;
+}
+.header .row .center .navigation {
+  width: 60px;
+  height: 28px;
+  display: inline-block;
+  margin-top: 6px;
+  text-align: center;
+  line-height: 28px;
+  margin-left: 16px;
+  position: relative;
+  cursor: pointer;
+}
+.header .row .center .navigation span:before {
+  content: '';
+  width: 15px;
+  height: 2px;
+  position: absolute;
+  top: 9px;
+  left: -1px;
+  padding-top: 2px;
+  padding-bottom: 2px;
+  border-top: 2px solid #c8c8c8;
+  border-bottom: 2px solid #c8c8c8;
+  background-color: #c8c8c8;
+  background-clip: content-box;
+}
+.header .row .center .navigation span:after {
+  content: '';
+  position: absolute;
+  top: 2px;
+  left: 43px;
+  border-width: 5px;
+  border-style: solid;
+  border-color: #c8c8c8 transparent transparent transparent;
+  margin-top: 10px;
+}
+.header .row .right {
+  float: right;
+}
+.header .row .right li {
+  width: 50px;
+  height: 28px;
+  display: inline-block;
+  line-height: 28px;
+  margin-top: 6px;
+  text-align: right;
+}
+.header .row .right li a {
+  width: 30px;
+  color: #3f3f3f;
+  text-align: center;
+}
+.header .row .right .top1 {
+  background: url("../images/top1.png") no-repeat 3px 5px;
+}
+.header .row .right .top2 {
+  width: 70px;
+  background: url("../images/top2.png") no-repeat 3px 5px;
+}
+.header .row .right .top3 {
+  background: url("../images/top3.png") no-repeat 8px 4px;
+}
+.header .row .right .top4 {
+  text-align: center;
+}
+.header .row .header-href {
+  width: 400px;
+  height: 30px;
+  position: absolute;
+  top: 40px;
+  right: 0;
+}
+.header .row .header-href a {
+  height: 20px;
+  line-height: 20px;
+  display: inline-block;
+  margin-top: 10px;
+  color: #ffffff;
+}
+.header .row .header-href .href2 {
+  position: absolute;
+  top: 13px;
+  left: 20px;
+  margin-top: 0;
+  font-size: 14px;
+  color: #ffffff;
+}
+.header .row .header-href .href2:hover {
+  color: #ff0000;
+}
+.header .row .header-href .href1, .header .row .header-href .href3, .header .row .header-href .href4, .header .row .header-href .href5, .header .row .header-href .href6, .header .row .header-href .href7 {
+  width: 20px;
+  height: 20px;
+}
+.header .row .header-href .href1 {
+  background: url("../images/content1-smalllogo.png") no-repeat 1px 2px;
+}
+.header .row .header-href .href3 {
+  margin-left: 40px;
+  background: url("../images/content1-smalllogo.png") no-repeat -67px 2px;
+}
+.header .row .header-href .href4 {
+  background: url("../images/content1-smalllogo.png") no-repeat -90px 2px;
+}
+.header .row .header-href .href5 {
+  background: url("../images/content1-smalllogo.png") no-repeat -112px 2px;
+}
+.header .row .header-href .href6 {
+  background: url("../images/content1-smalllogo.png") no-repeat -135px 2px;
+}
+.header .row .header-href .href7 {
+  background: url("../images/content1-smalllogo.png") no-repeat -157px 2px;
+}
+.header .row .header-href .href8 {
+  width: 38px;
+  height: 18px;
+  line-height: 18px;
+  display: inline-block;
+  position: absolute;
+  top: 10px;
+  left: 194px;
+  border-radius: 6px;
+  background: #fff;
+  text-align: center;
+}
+.header .row .header-href .back {
+  position: absolute;
+  top: 10px;
+  left: 240px;
+}
+.header .row .header-href .href9 {
+  width: 70px;
+  height: 20px;
+  text-align: center;
+  line-height: 20px;
+  border-radius: 10px;
+  background: #61d268;
+  margin-top: 0;
+}
+
+.container {
+  width: 980px;
+  margin: auto;
+}
+.container .content1 {
+  width: 100%;
+  height: 90px;
+  margin-top: 334px;
+  margin-bottom: 20px;
+  border: 5px solid #fff393;
+  position: relative;
+}
+.container .content1 .left {
+  margin-left: 20px;
+  width: 58px;
+  height: 100px;
+  position: absolute;
+  top: -9px;
+  background: url(../images/content1-logo1.png) no-repeat;
+}
+.container .content1 .left em {
+  display: inline-block;
+  margin-top: 14px;
+  margin-left: 16px;
+  width: 20px;
+  font-size: 18px;
+  color: #ffffff;
+}
+.container .content1 p {
+  width: 578px;
+  margin: 10px 50px 0 100px;
+  text-indent: 2px;
+  line-height: 20px;
+  color: #333333;
+  font-size: 14px;
+}
+.container .content1 .right {
+  width: 236px;
+  height: 40px;
+  position: absolute;
+  left: 720px;
+  top: 20px;
+  background: #5f5f5f;
+  font-size: 14px;
+}
+.container .content1 .right span {
+  margin-left: 10px;
+  color: #ffffff;
+}
+.container .content1 .right input {
+  width: 130px;
+  height: 24px;
+  margin-top: 8px;
+  margin-left: 12px;
+  padding-left: 10px;
+}
+.container .content1 .right i {
+  position: absolute;
+  top: 9px;
+  left: 205px;
+  margin-top: 10px;
+  border-width: 5px;
+  border-style: solid;
+  border-color: #615757 transparent transparent transparent;
+  cursor: pointer;
+}
+.container .content2 {
+  width: 100%;
+  height: 300px;
+  position: relative;
+}
+.container .content2 .left {
+  width: 680px;
+  height: 300px;
+  background: #fff;
+  border: 5px solid #fff393;
+  float: left;
+  position: relative;
+}
+.container .content2 .left .bottom {
+  width: 100%;
+  height: 50px;
+  background: #5498f5;
+  position: absolute;
+  bottom: 0;
+  font-size: 16px;
+  line-height: 50px;
+  color: #ffffff;
+}
+.container .content2 .left .bottom span {
+  margin-left: 8px;
+}
+.container .content2 .left .bottom ul {
+  position: absolute;
+  display: inline-block;
+  right: 20px;
+}
+.container .content2 .left .bottom ul li {
+  display: inline-block;
+}
+.container .content2 .left .bottom ul li a {
+  width: 10px;
+  height: 10px;
+  display: inline-block;
+  border-radius: 100%;
+  background: #fff;
+}
+.container .content2 .left .bottom ul li a:hover {
+  background: #f00;
+}
+.container .content2 .right {
+  width: 290px;
+  height: 300px;
+  background: #fff;
+  border: 5px solid #fff393;
+  float: right;
+}
+.container .content2 .right ul {
+  margin-top: 18px;
+}
+.container .content2 .right ul li {
+  font-size: 14px;
+  line-height: 27px;
+  margin-left: 6px;
+  color: #ff6600;
+  border-bottom: 1px dotted #909090;
+}
+.container .content2 .right ul li span {
+  color: #666666;
+}
+.container .content2 .right .bottom {
+  width: 162px;
+  height: 36px;
+  margin: 14px auto;
+  background: #fd3600;
+  padding-top: 1px;
+  border-radius: 8px;
+}
+.container .content2 .right .bottom a {
+  text-align: center;
+  background: #fda10f;
+  display: block;
+  margin: auto;
+  width: 160px;
+  height: 30px;
+  font-size: 16px;
+  line-height: 30px;
+  color: #ffffff;
+  border-radius: 8px;
+}
+.container .center {
+  width: 100%;
+  height: 520px;
+  margin-top: 20px;
+  padding: 0 20px;
+  background: #fff;
+}
+.container .center .top {
+  height: 70px;
+}
+.container .center .top .left {
+  width: 200px;
+  height: 90px;
+  float: left;
+}
+.container .center .top p {
+  width: 700px;
+  margin-top: 20px;
+  color: #333333;
+  float: right;
+  font-size: 14px;
+  line-height: 20px;
+}
+.container .center ul {
+  margin-top: 20px;
+  margin-right: -30px;
+}
+.container .center ul li {
+  width: 220px;
+  height: 186px;
+  margin-right: 13px;
+  display: inline-block;
+  position: relative;
+  margin-bottom: 30px;
+}
+.container .center ul li img {
+  width: 220px;
+  height: 146px;
+}
+.container .center ul li span {
+  width: 100%;
+  position: absolute;
+  text-align: center;
+  top: 130px;
+  left: 10px;
+  font-size: 14px;
+  color: #ffffff;
+}
+.container .center ul li .footer {
+  width: 100%;
+  height: 28px;
+  margin-top: 116px;
+  line-height: 28px;
+  color: #ffffff;
+  position: relative;
+  background: #5498f5;
+}
+.container .center ul li .footer .left {
+  display: inline-block;
+  margin-left: 20px;
+}
+.container .center ul li .footer .san {
+  border-width: 14px;
+  position: absolute;
+  border-style: solid;
+  top: 0;
+  left: 92px;
+  border-color: transparent #ff6701 #ff6701 transparent;
+  z-index: 1;
+}
+.container .center ul li .footer .right {
+  margin-left: 34px;
+  display: inline-block;
+  width: 100px;
+  text-align: center;
+  background: #ff6701;
+}
+.container .content3 .top .left {
+  background: url("../images/content3logo1.png") no-repeat;
+}
+.container .content4 .top .left {
+  background: url("../images/content3logo2.png") no-repeat;
+}
+.container .content5 .top .left {
+  background: url("../images/content3logo3.png") no-repeat;
+}
+.container .content6 {
+  height: 290px;
+}
+.container .content6 .top .left {
+  width: 260px;
+  height: 70px;
+  background: url("../images/content6logo1.png") no-repeat;
+}
+.container .content6 ul {
+  margin-top: 14px;
+}
+.container .content6 ul li {
+  width: 200px;
+  height: 140px;
+  border-radius: 10px;
+  margin-right: 38px;
+}
+.container .content6 ul li img {
+  width: 200px;
+  height: 140px;
+  border-radius: 10px;
+}
+.container .content6 ul p {
+  font-size: 14px;
+  color: #5d5d5d;
+  text-align: center;
+  margin-top: 14px;
+}
+.container .content7 {
+  height: 924px;
+}
+.container .content7 .top .left {
+  width: 260px;
+  height: 70px;
+  background: url("../images/content7logo1.png") no-repeat;
+}
+.container .content7 .reviewArea {
+  width: 100%;
+  height: 100%;
+  background: url("../images/content7bg.jpg") no-repeat -17px 1px;
+}
+
+.bottom-footer {
+  margin-top: 140px;
+  margin-bottom: 30px;
+  text-align: center;
+  line-height: 20px;
+}
+.bottom-footer li {
+  display: inline-block;
+  color: #555555;
+}
+.bottom-footer li a {
+  margin-right: 8px;
+  color: #555555;
+}
+.bottom-footer li :hover {
+  color: #ff0000;
+}
+
+/*# sourceMappingURL=index.css.map */

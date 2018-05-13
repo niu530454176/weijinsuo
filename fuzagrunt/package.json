@@ -1,0 +1,28 @@
+{
+  "name": "spmseajs",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "grunt": "^1.0.1",
+    "grunt-cmd-concat": "^0.2.8",
+    "grunt-cmd-transport": "^0.5.1",
+    "grunt-contrib-clean": "^1.0.0",
+    "grunt-contrib-cssmin": "^1.0.2",
+    "grunt-contrib-imagemin": "^1.0.1",
+    "grunt-contrib-jshint": "~0.10.0",
+    "grunt-contrib-nodeunit": "~0.4.1",
+    "grunt-contrib-sass": "^1.0.0",
+    "grunt-contrib-uglify": "~0.5.0"
+  },
+  "dependencies": {
+    "jquery": "^1.11.1",
+    "seajs": "^3.0.2",
+    "seajs-css": "^1.0.5"
+  }
+}

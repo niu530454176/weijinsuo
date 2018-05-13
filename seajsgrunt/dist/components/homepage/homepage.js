@@ -1,0 +1,2 @@
+/*! spmseajs 2017-06-05 */
+define("MOD_ROOT/homepage/homepage",["jquery"],function(a,b,c){function d(){e()}function e(){f(".left-panel").on("mouseenter",".homepage-cat-has-submenu",function(){var a=f(this);a.find(".homepage-cat-name").addClass("hovered"),a.find(".homepage-cat-submenu").show()}),f(".left-panel").on("mouseleave",".homepage-cat-has-submenu",function(){var a=f(this);a.find(".homepage-cat-name").removeClass("hovered"),a.find(".homepage-cat-submenu").hide()})}var f=a("jquery");c.exports.__id="homepage",c.exports.init=d});

@@ -1,0 +1,2 @@
+/*! spmseajs 2017-06-05 */
+define("MOD_ROOT/headline/headline",["jquery","MOD_ROOT/slider/slider"],function(a,b,c){function d(){new f({$target:e(".headline-slider")})}var e=a("jquery"),f=a("MOD_ROOT/slider/slider");c.exports.__id="headline",c.exports.init=d});

@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>消消乐游戏</title>
+    <style>
+        .tile {
+            width: 128px;
+            height: 128px;
+            position: absolute;
+        }
+        .tile img,
+        .tile .mask {
+            width: 100%;
+            height: 100%;
+        }
+
+        .tile .mask {
+            background: black;
+            position: absolute;
+            top: 0;
+            left: 0;
+            /*display: none;*/
+        }
+    </style>
+</head>
+<div class="container" id="container"></div>
+<body>
+<script>
+    var container = document.getElementById('container');
+    function Tile(tLeft,tTop,type) {
+        this.create(type);
+        this.setPosition(tLeft,tTop);
+    }
+    Tile.prototype = {
+        type: 0,//标识当前图案类型
+        target: null,//当前图案的html节点
+        inMatch: false,//是否被消除
+        create: function (type) {
+            var _this=this;
+            var div=document.createElement('div');
+            var className=document.createAttribute('class');
+            className.value='tile';
+            div.setAttributeNode(className);
+            div.innerHTML += ' \
+                <img src="images/s'+type+'.png" alt="">\
+                <div class="mask"></div>';
+            container.appendChild(div);
+            _this.mask=div.getElementsByClassName('mask')[0];//做缓存
+            _this.target=div;//缓存到target里
+            _this.type=type;//对type进行更新 自己存一个
+        },
+        setPosition:function (tLeft,tTop) {
+            var _this=this;
+            _this.target.style.left=tLeft+'px';
+            _this.target.style.top=tTop+'px';
+        },
+        show:function () {
+            var _this=this;
+            _this.mask.style.display='none';
+        },
+        hidden:function () {
+            var _this=this;
+            _this.mask.style.display='block';
+        },
+        remove:function () {
+            var _this=this;
+            container.removeChild(_this.target);
+        }
+    };
+    //创建一个数组 并随机乱序排列
+    var tileTypeArr=[];
+    for(var i=1;i<=12;i++){
+        tileTypeArr.push(i);
+        tileTypeArr.push(i);
+    }
+    tileTypeArr.sort(function (a,b) {
+        if(Math.random()>0.5){
+            return 1;
+        }else{
+            return -1;
+        }
+    });
+    console.log(tileTypeArr);
+
+    var tileArr=[];//建数组放tile 方便以后控制
+    for(var i=0;i<4;i++){//循环放tile
+        for(var j=0;j<6;j++){
+            var tile=new Tile(j*128+2*j,i*128+2*i,tileTypeArr.pop());
+            tileArr.push(tile);//把创建的tile放在数组里
+        }
+    }
+    for(var i in tileArr){
+        tileArr[i].target.addEventListener('click',onClickTile)
+    }
+    var firstTile=null;//建一个全局变量 放第一个点击的
+    var isAnimation=false;//
+    function onClickTile(e) {
+        if(isAnimation){
+            return;
+        }
+        var target=e.currentTarget;//currentarget每次侦听的
+        for(var i in tileArr){//遍历tile数组
+            var tile=tileArr[i];//取出当前循环的tile对象
+            if(target==tile.target){//判断tile对象中的target节点是否和当前被点击的节点一致
+                tile.show();
+                if(firstTile==null){//如果是第一次点击 把第一个放firstTile
+                    firstTile=tile;
+                }else{
+                    if(tile==firstTile){//如果点击的还是上一次，就返回
+                        return;
+                    }
+                    if(tile.type==firstTile.type){//判断第一次点击的与第二次点击的是否一致
+                        setTimeout(function () {
+                            tile.remove();
+                            firstTile.remove();
+                            firstTile=null;
+                            isAnimation=false;//当前没有在运动状态
+                        },400);
+                        isAnimation=true;
+                    }else {
+                        setTimeout(function () {
+                            tile.hidden();
+                            firstTile.hidden();
+                            firstTile=null;
+                            isAnimation=false
+                        },400);
+                        isAnimation=true;
+                    }
+                }
+                break;
+            }
+        }
+    }
+    document.body.addEventListener('click',function () {
+        setTimeout(function () {
+            if(container.childElementCount == 0){
+               alert('恭喜你！');
+            }
+        },600);
+
+    });
+
+</script>
+</body>
+</html>

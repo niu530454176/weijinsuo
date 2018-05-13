@@ -1,0 +1,2 @@
+/*! spmseajs 2017-06-05 */
+define("MOD_ROOT/main/main",[],function(a,b,c){function d(){var b=[];b.push("MOD_ROOT/topbar/topbar"),b.push("MOD_ROOT/homepage/homepage"),b.push("MOD_ROOT/headline/headline"),b.push("MOD_ROOT/poprecipes/poprecipes"),b.push("MOD_ROOT/lazyinit/lazyinit"),a.async(b,function(){for(var a=Array.prototype.slice.call(arguments),b=a.length,c=0;c<b;c++){var d=a[c];d&&"function"==typeof d.init&&d.init()}})}c.exports.__id="main",c.exports.init=d});
